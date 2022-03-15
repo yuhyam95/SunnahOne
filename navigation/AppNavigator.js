@@ -6,10 +6,9 @@ import {
     StyleSheet,
 } from "react-native";
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
-import {  ScpScreen, TempForecast, CropCalendar } from "../screens"
+import {  Audio, Read, Donate, Settings,  } from "../screens"
 import { COLORS, FONTS, icons } from "../constants";
-import SettingsNavigation from "./SettingsNavigation";
-import NewsWarningsNavigation from './NewsWarningsNavigation';
+import { AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator()
 
@@ -24,19 +23,19 @@ const AppNavigator = () => {
                     left: 0,
                     right: 0,
                     elevation: 0,
-                    backgroundColor: COLORS.primary,
-                    borderTopColor: COLORS.primary,
+                    backgroundColor: COLORS.tealgreen,
+                    //borderTopColor: COLORS.teal,
                     height: 90
                 }
             }}
         >
             <Tab.Screen
-                name="SRP"
-                component={ScpScreen}
+                name="Audio"
+                component={Audio}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Image
+                            {/* <Image
                                 source={icons.scp}
                                 resizeMode="contain"
                                 style={{
@@ -44,19 +43,20 @@ const AppNavigator = () => {
                                     height: 30,
                                     tintColor: focused ? COLORS.secondary : COLORS.white
                                 }}
-                            />
-                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>SRP</Text>
+                            /> */}
+                            <AntDesign name="play" size={36} color={COLORS.white} />
+                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Audio</Text>
                         </View>
                     )
                 }}
             />
             <Tab.Screen
-                name="Crop Calendar"
-                component={CropCalendar}
+                name="Read"
+                component={Read}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Image
+                            {/* <Image
                                 source={icons.crop_calendar}
                                 resizeMode="contain"
                                 style={{
@@ -64,19 +64,20 @@ const AppNavigator = () => {
                                     height: 30,
                                     tintColor: focused ? COLORS.secondary : COLORS.white
                                 }}
-                            />
-                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Crop Calendar</Text>
+                            /> */}
+                            <AntDesign name="book" size={36} color={COLORS.white} />
+                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Read</Text>
                         </View>
                     )
                 }}
             />
           <Tab.Screen
-                name="Temp Forecast"
-                component={TempForecast}
+                name="Donate"
+                component={Donate}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Image
+                            {/* <Image
                                 source={icons.temp_forecast}
                                 resizeMode="contain"
                                 style={{
@@ -84,39 +85,21 @@ const AppNavigator = () => {
                                     height: 30,
                                     tintColor: focused ? COLORS.secondary : COLORS.white
                                 }}
-                            />
-                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Temp Forecast</Text>
+                            /> */}
+                            <MaterialCommunityIcons name="charity" size={36} color={COLORS.white} />
+                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Donate</Text>
                         </View>
                     )
                 }}
             />
-          <Tab.Screen
-                name="Warnings"
-                component={NewsWarningsNavigation}
-                options={{
-                    tabBarIcon: ({ focused }) => (
-                        <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Image
-                                source={icons.news_warnings}
-                                resizeMode="contain"
-                                style={{
-                                    width: 30,
-                                    height: 30,
-                                    tintColor: focused ? COLORS.secondary : COLORS.white
-                                }}
-                            />
-                            <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Warnings</Text>
-                        </View>
-                    )
-                }}
-            />
+          
           <Tab.Screen
                 name="Settings"
-                component={SettingsNavigation}
+                component={Settings}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Image
+                            {/* <Image
                                 source={icons.settings}
                                 resizeMode="contain"
                                 style={{
@@ -124,7 +107,8 @@ const AppNavigator = () => {
                                     height: 30,
                                     tintColor: focused ? COLORS.secondary : COLORS.white
                                 }}
-                            />
+                            /> */}
+                            <Ionicons name="settings" size={36} color={COLORS.white} />
                             <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Settings</Text>
                         </View>
                     )
