@@ -8,7 +8,7 @@ import {
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
 import {  Audio, Read, Donate, Settings,  } from "../screens"
 import { COLORS, FONTS, icons } from "../constants";
-import { AntDesign, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign, Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator()
 
@@ -65,7 +65,7 @@ const AppNavigator = () => {
                                     tintColor: focused ? COLORS.secondary : COLORS.white
                                 }}
                             /> */}
-                            <AntDesign name="book" size={36} color={COLORS.white} />
+                            <FontAwesome5 name="book" size={36} color={COLORS.white} />
                             <Text style={{ color: focused ? COLORS.secondary : COLORS.white, ...FONTS.body6 }}>Read</Text>
                         </View>
                     )
