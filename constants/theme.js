@@ -49,8 +49,8 @@ export const FONTS = {
     body2: { fontFamily: "Segoe-UI", fontSize: SIZES.body2, lineHeight: scale(30) },
     body3: { fontFamily: "Segoe-UI", fontSize: SIZES.body3, lineHeight: scale(22) },
     body4: { fontFamily: "Segoe-UI", fontSize: SIZES.body4, lineHeight: scale(22) },
-    body5: { fontFamily: "Segoe-UI", fontSize: SIZES.body5, lineHeight: scale(22) },
-    body6: { fontFamily: "Segoe-UI", fontSize: SIZES.body6, lineHeight: scale(22) },
+    body5: { fontFamily: "Segoe-UI", fontSize: SIZES.body5, lineHeight: scale(18) },
+    body6: { fontFamily: "Segoe-UI", fontSize: SIZES.body6, lineHeight: scale(18) },
 };
 
 const appTheme = { COLORS, SIZES, FONTS };

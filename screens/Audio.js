@@ -18,6 +18,36 @@ const imams = [
     id: 3,
     name: "Sheikh Umar Sani Rijiyar-Lemo",
     image: images.rijiyarlemo
+  },
+  {
+    id: 4,
+    name: "Sheikh Ja'afar Mahmud Adam",
+    image: images.jaafar
+  },
+  {
+    id: 5,
+    name: "Sheikh Muhammad Albani Zaria",
+    image: images.albani
+  },
+  {
+    id: 6,
+    name: "Sheikh Umar Sani Rijiyar-Lemo",
+    image: images.rijiyarlemo
+  },
+  {
+    id: 7,
+    name: "Sheikh Ja'afar Mahmud Adam",
+    image: images.jaafar
+  },
+  {
+    id: 8,
+    name: "Sheikh Muhammad Albani Zaria",
+    image: images.albani
+  },
+  {
+    id: 9,
+    name: "Sheikh Umar Sani Rijiyar-Lemo",
+    image: images.rijiyarlemo
   }
 ]
 
@@ -25,33 +55,32 @@ const numColumns = 3;
 
 function renderImams() {
   const renderItem = ({ item, index }) => (
-      <TouchableOpacity
-          style={{
-              width: 40,
-              paddingVertical: SIZES.padding,
-              paddingHorizontal: SIZES.padding,
-              margin: SIZES.padding /4,
-              borderRadius: 20,
-              height: 40,
-              backgroundColor: COLORS.white
-          }}
-          onPress={console.log(item)}
-      >
-          {/* Currency */}
-          <View style={{ flexDirection: 'column' }}>
-              <View>
-                  {/* <Image
-                      source={item.image}                      
-                      style={{
-                          marginTop: 5,
-                      }}
-                  /> */}
-              </View>
-              <View style={{ marginLeft: SIZES.base }}>
-                  <Text style={{ ...FONTS.h2 }}>{item.name}</Text>               
-              </View>
-          </View>
-      </TouchableOpacity>
+    
+    <TouchableOpacity
+        style={{
+            width: 90,
+            borderRadius: 40,
+            // height: 80,
+            margin: 20,
+            alignItems: 'center',
+            justifyContent: 'center',
+          
+        }}
+
+    >     
+                <Image
+                    source={item.image}                      
+                    style={{
+                      height: 90,
+                      width: 90,
+                      borderRadius: 45,
+                      marginTop: 5,
+                    }}
+                />
+                <Text style={{ ...FONTS.body6, color: COLORS.tealgreen, fontWeight: "bold", textAlign: "center" }}>{item.name}</Text>
+                                 
+    </TouchableOpacity>
+    
   )
   
   return (
@@ -62,12 +91,13 @@ function renderImams() {
           alignItems: 'center',
           justifyContent: 'center',
           width: "100%",
-          top: '-10%'            
+          //top: '-10%'            
       }}
       >
-      <Text style={{ marginLeft: SIZES.padding, marginTop: 70, color: COLORS.tealgreen, ...FONTS.h2 }}>Featured</Text>
+      <Text style={{ marginLeft: SIZES.padding, marginTop: 20, color: COLORS.tealgreen, ...FONTS.h2 }}>Featured Imams</Text>
+      
       <FlatList
-          contentContainerStyle={{ marginTop: SIZES.base, alignItems: 'center', justifyContent:'space-around', }}
+          contentContainerStyle={{ alignItems: 'center', justifyContent:'space-between', }}
           numColumns= {numColumns}
           data={imams}
           renderItem={renderItem}
@@ -75,6 +105,8 @@ function renderImams() {
           // horizontal
           // showsHorizontalScrollIndicator={false}
       />
+
+      
       </View>
   </ScrollView>
   )
