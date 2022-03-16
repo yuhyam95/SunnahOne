@@ -7,8 +7,73 @@ const imams = [
   {
     id: 1,
     name: "Sheikh Ja'afar Mahmud Adam",
-    image: images.jaafar
-  },
+    image: images.jaafar,
+    categories: [ {
+        name: "Ramadan Tafseer",
+        year: [
+          {
+            name: "Ramadan Tafseer 2000",
+            tracks: [
+              {
+                name: "Day 1",
+              },
+              {
+                name: "Day 2",
+              },
+              {
+                name: "Day 2",
+              }
+            ]
+          },
+          {
+            name: " Ramadan Tafseer 2001",
+            tracks: [
+              {
+                name: "Day 1",
+              },
+              {
+                name: "Day 2",
+              },
+              {
+                name: "Day 3",
+              }
+            ]
+          }
+        ] 
+      },
+      {
+        name: "Hisnul Muslim",
+        tracks: [
+          {
+            name: "Day 1",
+            
+          },
+          {
+            name: "Day 2", 
+          },
+          {
+            name: "Day 3", 
+          }
+        ] 
+      },
+      {
+        name: "Sahihul Bukhari",
+        tracks: [
+          {
+            name: "Day 1",
+            
+          },
+          {
+            name: "Day 2", 
+          },
+          {
+            name: "Day 3", 
+          }
+        ] 
+      },
+    ]
+    },
+
   {
     id: 2,
     name: "Sheikh Muhammad Albani Zaria",
@@ -66,7 +131,7 @@ function renderImams() {
             justifyContent: 'center',
           
         }}
-
+        onPress={() => console.log(item)}
     >     
                 <Image
                     source={item.image}                      
@@ -90,8 +155,7 @@ function renderImams() {
           flex: 1,
           alignItems: 'center',
           justifyContent: 'center',
-          width: "100%",
-          //top: '-10%'            
+          width: "100%",            
       }}
       >
       <Text style={{ marginLeft: SIZES.padding, marginTop: 20, color: COLORS.tealgreen, ...FONTS.h2 }}>Featured Imams</Text>
