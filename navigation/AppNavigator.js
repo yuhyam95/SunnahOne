@@ -5,10 +5,25 @@ import {
     Text,
     StyleSheet,
 } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator, BottomTabBar } from "@react-navigation/bottom-tabs"
-import {  Audio, Read, Donate, Settings,  } from "../screens"
+import {  Audio, Read, Donate, Settings, ImamScreen  } from "../screens"
 import { COLORS, FONTS, icons } from "../constants";
 import { AntDesign, Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
+
+
+const Stack = createStackNavigator();
+
+const AudioNavigator = () => {
+    return(
+    <Stack.Navigator>
+    <Stack.Screen name="Audio" component={Audio} options={{headerShown: false}}/>
+    <Stack.Screen name="Imam Screen" component={ImamScreen} options={({ route }) => ({ title: route.params.name })}/>
+    </Stack.Navigator>
+    )
+}
+
+
 
 const Tab = createBottomTabNavigator()
 
@@ -31,7 +46,7 @@ const AppNavigator = () => {
         >
             <Tab.Screen
                 name="Audio"
-                component={Audio}
+                component={AudioNavigator}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <View style={{ alignItems: 'center', justifyContent: 'center' }}>
