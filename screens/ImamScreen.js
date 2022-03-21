@@ -11,8 +11,9 @@ export default function ImamScreen({navigation, route}) {
 
     useEffect(() => {
       const imam = route.params;
+      setMenuItems(imam.imam.categories)
       setSelectedImam(imam);
-      console.log(selectedImam.imam.categories)
+      //console.log(selectedImam.imam.categories)
     }, []) 
  
     function renderCategories() {
@@ -20,27 +21,37 @@ export default function ImamScreen({navigation, route}) {
           
           <TouchableOpacity
               style={{
-                  width: 90,
-                  borderRadius: 40,
-                  // height: 80,
-                  margin: 20,
-                  alignItems: 'center',
+                   alignItems: 'center',
                   justifyContent: 'center',
-                  //backgroundColor: COLORS.white
-                
+                  
               }}
               onPress={() => navigation.navigate("Imam Screen", {imam: item})}
           >     
+
+          <View
+            style={{
+              width: 90,
+              borderRadius: 45,
+              height: 90,
+              margin: 20,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: COLORS.white
+            
+          }}
+          
+          >
                       <Image
                           source={images.quranicon}                      
                           style={{
-                            height: 100,
-                            width: 100,
-                            borderRadius: 50,
+                            height: 90,
+                            width: 90,
+                            borderRadius: 45,
                             marginTop: 5,
                             tintColor: COLORS.tealgreen
                           }}
                       />
+          </View>
                       <Text style={{ ...FONTS.body5, color: COLORS.tealgreen, fontWeight: "bold", textAlign: "center" }}>{item.name}</Text>
                                        
           </TouchableOpacity>
@@ -57,12 +68,12 @@ export default function ImamScreen({navigation, route}) {
                 width: "100%",            
             }}
             >
-            <Text style={{ marginLeft: SIZES.padding, color: COLORS.tealgreen, ...FONTS.h2 }}>Categories</Text>
+            <Text style={{ marginLeft: SIZES.padding, color: COLORS.tealgreen, ...FONTS.h3 }}>Categories</Text>
             
             <FlatList
                 contentContainerStyle={{ alignItems: 'center', justifyContent:'space-between', }}
                 numColumns= {numColumns}
-                data={selectedImam.imam.categories}
+                data={menuItems}
                 renderItem={renderItem}
                 keyExtractor={item => `${item.id}`}
                 // horizontal

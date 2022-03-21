@@ -6,7 +6,7 @@ import { COLORS, FONTS, images, SIZES } from '../constants';
 const imams = [
   {
     id: 1,
-    name: "Sheikh Ja'afar Mahmud Adam",
+    name: "Ja'afar Mahmud Adam",
     image: images.jaafar,
     categories: [ {
         name: "Ramadan Tafseer",
@@ -76,42 +76,42 @@ const imams = [
 
   {
     id: 2,
-    name: "Sheikh Muhammad Albani Zaria",
+    name: "Muhammad Albani Zaria",
     image: images.albani
   },
   {
     id: 3,
-    name: "Sheikh Umar Sani Rijiyar-Lemo",
+    name: "Umar Sani Rijiyar-Lemo",
     image: images.rijiyarlemo
   },
   {
     id: 4,
-    name: "Sheikh Ja'afar Mahmud Adam",
+    name: "Ja'afar Mahmud Adam",
     image: images.jaafar
   },
   {
     id: 5,
-    name: "Sheikh Muhammad Albani Zaria",
+    name: "Muhammad Albani Zaria",
     image: images.albani
   },
   {
     id: 6,
-    name: "Sheikh Umar Sani Rijiyar-Lemo",
+    name: "Umar Sani Rijiyar-Lemo",
     image: images.rijiyarlemo
   },
   {
     id: 7,
-    name: "Sheikh Ja'afar Mahmud Adam",
+    name: "Ja'afar Mahmud Adam",
     image: images.jaafar
   },
   {
     id: 8,
-    name: "Sheikh Muhammad Albani Zaria",
+    name: "Muhammad Albani Zaria",
     image: images.albani
   },
   {
     id: 9,
-    name: "Sheikh Umar Sani Rijiyar-Lemo",
+    name: "Umar Sani Rijiyar-Lemo",
     image: images.rijiyarlemo
   }
 ]
@@ -126,16 +126,29 @@ export default function Audio({navigation}) {
       
       <TouchableOpacity
           style={{
-              width: 90,
-              borderRadius: 40,
-              // height: 80,
-              margin: 20,
+              // width: 90,
+              // borderRadius: 40,
+              // // height: 80,
+              // margin: 20,
               alignItems: 'center',
               justifyContent: 'center',
             
           }}
           onPress={() => navigation.navigate("Imam Screen", {imam: item})}
       >     
+      <View
+            style={{
+              width: 90,
+              borderRadius: 45,
+              height: 90,
+              margin: 20,
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: COLORS.white
+            
+          }}
+          
+          >
                   <Image
                       source={item.image}                      
                       style={{
@@ -145,8 +158,18 @@ export default function Audio({navigation}) {
                         marginTop: 5,
                       }}
                   />
+                  </View>
+                  <View
+                        style={{
+                          width: 100,
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          
+                      }}
+          
+                    >
                   <Text style={{ ...FONTS.body5, color: COLORS.tealgreen, fontWeight: "900", textAlign: "center" }}>{item.name}</Text>
-                                   
+                  </View>                        
       </TouchableOpacity>
       
     )
