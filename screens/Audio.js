@@ -139,13 +139,13 @@ export default function Audio({navigation}) {
                   <Image
                       source={item.image}                      
                       style={{
-                        height: 90,
-                        width: 90,
-                        borderRadius: 45,
+                        height: 100,
+                        width: 100,
+                        borderRadius: 50,
                         marginTop: 5,
                       }}
                   />
-                  <Text style={{ ...FONTS.body6, color: COLORS.tealgreen, fontWeight: "bold", textAlign: "center" }}>{item.name}</Text>
+                  <Text style={{ ...FONTS.body5, color: COLORS.tealgreen, fontWeight: "900", textAlign: "center" }}>{item.name}</Text>
                                    
       </TouchableOpacity>
       
