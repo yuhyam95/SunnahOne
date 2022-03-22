@@ -141,7 +141,7 @@ export default function Audio({navigation}) {
               width: 90,
               borderRadius: 45,
               height: 90,
-              margin: 20,
+              margin: 15,
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: COLORS.white

@@ -13,9 +13,26 @@ export default function ImamScreen({navigation, route}) {
       const imam = route.params;
       setMenuItems(imam.imam.categories)
       setSelectedImam(imam);
-      //console.log(selectedImam.imam.categories)
+
     }, []) 
  
+
+    function renderBiography() {
+      <View
+      style={{
+        width: 480,
+        paddingVertical: 50,
+        paddingHorizontal: 100,
+        margin: SIZES.padding /4,
+        borderRadius: 10,
+        backgroundColor: COLORS.red
+    }}
+      >
+                    <Text style={{ marginLeft: SIZES.padding, color: COLORS.tealgreen, ...FONTS.h3 }}>Some Bio</Text>        
+      </View>
+    }
+
+
     function renderCategories() {
         const renderItem = ({ item, index }) => (
           
@@ -33,7 +50,7 @@ export default function ImamScreen({navigation, route}) {
               width: 90,
               borderRadius: 45,
               height: 90,
-              margin: 20,
+              margin: 15,
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: COLORS.white
@@ -88,6 +105,7 @@ export default function ImamScreen({navigation, route}) {
       
       return (
         <Screen>
+          {renderBiography()}
           {renderCategories()}
         </Screen>
       )
