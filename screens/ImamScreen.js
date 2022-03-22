@@ -1,11 +1,19 @@
 import React, {useState, useEffect} from 'react'
-import {View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import {View, Text, Image, ScrollView, FlatList, TouchableOpacity, LogBox } from 'react-native';
+import { scale } from 'react-native-size-matters';
 import Screen from '../components/Screen';
 import { COLORS, FONTS, images, SIZES } from '../constants';
 
 const numColumns = 3;
 
 export default function ImamScreen({navigation, route}) {
+
+
+
+useEffect(() => {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested'])
+    }, [])
+
      const [ menuItems, setMenuItems ] = useState(null);
      const [selectedImam, setSelectedImam] = useState("");
 
@@ -20,11 +28,11 @@ export default function ImamScreen({navigation, route}) {
     function renderBiography() {
       <View
       style={{
-        width: 480,
-        paddingVertical: 50,
-        paddingHorizontal: 100,
+        width: scale(480),
+        paddingVertical: scale(50),
+        paddingHorizontal: scale(100),
         margin: SIZES.padding /4,
-        borderRadius: 10,
+        borderRadius: scale(10),
         backgroundColor: COLORS.red
     }}
       >
@@ -47,10 +55,10 @@ export default function ImamScreen({navigation, route}) {
 
           <View
             style={{
-              width: 90,
-              borderRadius: 45,
-              height: 90,
-              margin: 15,
+              width: scale(90),
+              borderRadius: scale(45),
+              height: scale(90),
+              margin: scale(10),
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: COLORS.white
@@ -61,10 +69,10 @@ export default function ImamScreen({navigation, route}) {
                       <Image
                           source={images.quranicon}                      
                           style={{
-                            height: 90,
-                            width: 90,
-                            borderRadius: 45,
-                            marginTop: 5,
+                            height: scale(90),
+                            width: scale(90),
+                            borderRadius: scale(45),
+                            marginTop: scale(5),
                             tintColor: COLORS.tealgreen
                           }}
                       />

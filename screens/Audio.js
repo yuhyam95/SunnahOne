@@ -1,7 +1,8 @@
-import React from 'react'
-import {View, Text, Image, ScrollView, FlatList, TouchableOpacity } from 'react-native';
+import React, {useEffect} from 'react'
+import {View, Text, Image, ScrollView, FlatList, TouchableOpacity, LogBox } from 'react-native';
 import Screen from '../components/Screen';
 import { COLORS, FONTS, images, SIZES } from '../constants';
+import { scale } from 'react-native-size-matters'
 
 const imams = [
   {
@@ -86,33 +87,33 @@ const imams = [
   },
   {
     id: 4,
-    name: "Ja'afar Mahmud Adam",
-    image: images.jaafar
+    name: "Isa Ali Ibrahim Pantami",
+    image: images.pantami
   },
   {
     id: 5,
-    name: "Muhammad Albani Zaria",
-    image: images.albani
+    name: "Mansur Ibrahim Sokoto",
+    image: images.mansursokoto
   },
   {
     id: 6,
-    name: "Umar Sani Rijiyar-Lemo",
-    image: images.rijiyarlemo
+    name: "Abdallah Usman Gadon-Kaya",
+    image: images.gadonkaya
   },
   {
     id: 7,
-    name: "Ja'afar Mahmud Adam",
-    image: images.jaafar
+    name: "Mansur Isa Yelwa",
+    image: images.mansuryelwa
   },
   {
     id: 8,
-    name: "Muhammad Albani Zaria",
-    image: images.albani
+    name: "Bashir Aliyu Faruk",
+    image: images.bashiraliyu
   },
   {
     id: 9,
-    name: "Umar Sani Rijiyar-Lemo",
-    image: images.rijiyarlemo
+    name: "Tijjani Yusuf Guruntum",
+    image: images.guruntum
   }
 ]
 
@@ -121,6 +122,12 @@ const numColumns = 3;
 
 
 export default function Audio({navigation}) {
+
+  useEffect(() => {
+    LogBox.ignoreLogs(['VirtualizedLists should never be nested'])
+    }, [])
+
+
   function renderImams() {
     const renderItem = ({ item, index }) => (
       
@@ -138,10 +145,10 @@ export default function Audio({navigation}) {
       >     
       <View
             style={{
-              width: 90,
-              borderRadius: 45,
-              height: 90,
-              margin: 15,
+              width: scale(90),
+              borderRadius: scale(45),
+              height: scale(90),
+              margin: scale(10),
               alignItems: 'center',
               justifyContent: 'center',
               backgroundColor: COLORS.white
@@ -152,16 +159,16 @@ export default function Audio({navigation}) {
                   <Image
                       source={item.image}                      
                       style={{
-                        height: 100,
-                        width: 100,
-                        borderRadius: 50,
-                        marginTop: 5,
+                        height: scale(100),
+                        width: scale(100),
+                        borderRadius: scale(50),
+                        marginTop: scale(5),
                       }}
                   />
                   </View>
                   <View
                         style={{
-                          width: 100,
+                          width: scale(100),
                           alignItems: 'center',
                           justifyContent: 'center',
                           
@@ -184,7 +191,7 @@ export default function Audio({navigation}) {
             width: "100%",            
         }}
         >
-        <Text style={{ marginLeft: SIZES.padding, marginTop: 20, color: COLORS.tealgreen, ...FONTS.h2 }}>Featured Imams</Text>
+        <Text style={{ marginLeft: SIZES.padding, marginTop: scale(20), color: COLORS.tealgreen, ...FONTS.h2 }}>Featured Imams</Text>
         
         <FlatList
             contentContainerStyle={{ alignItems: 'center', justifyContent:'space-between', }}
