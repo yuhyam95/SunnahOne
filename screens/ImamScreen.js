@@ -1,3 +1,4 @@
+import ReadMore from '@fawazahmed/react-native-read-more';
 import React, {useState, useEffect} from 'react'
 import {View, Text, Image, ScrollView, FlatList, TouchableOpacity, LogBox } from 'react-native';
 import { scale } from 'react-native-size-matters';
@@ -16,28 +17,43 @@ useEffect(() => {
 
      const [ menuItems, setMenuItems ] = useState(null);
      const [selectedImam, setSelectedImam] = useState("");
+     const [imamBiography, setImamBiography] = useState("");
 
     useEffect(() => {
       const imam = route.params;
       setMenuItems(imam.imam.categories)
       setSelectedImam(imam);
-
+      setImamBiography(imam.imam.biography)
+      
     }, []) 
  
 
     function renderBiography() {
-      <View
-      style={{
-        width: scale(480),
-        paddingVertical: scale(50),
-        paddingHorizontal: scale(100),
-        margin: SIZES.padding /4,
-        borderRadius: scale(10),
-        backgroundColor: COLORS.red
-    }}
+      return (
+        <View
+        style={{
+        alignItems: 'center',
+        justifyContent: 'center'
+           }}
       >
-                    <Text style={{ marginLeft: SIZES.padding, color: COLORS.tealgreen, ...FONTS.h3 }}>Some Bio</Text>        
+        <View
+        style={{
+        width: '90%',
+        paddingVertical: scale(20),
+        // margin: SIZES.padding /4,
+        borderRadius: scale(10),
+        //backgroundColor: COLORS.lightGray1
+           }}
+      >
+        {/* <Text style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "left" }}>{imamBiography}</Text>         */}
+      <ReadMore numberOfLines={3} seeMoreStyle={{color: COLORS.green}} seeLessStyle={{color: COLORS.green}} seeLessText="Read Less" seeMoreText="Read More"
+         style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "justify" }}>
+          {imamBiography}
+      </ReadMore>
       </View>
+      </View>
+      )
+      
     }
 
 
@@ -61,7 +77,6 @@ useEffect(() => {
               margin: scale(10),
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: COLORS.white
             
           }}
           
@@ -90,7 +105,8 @@ useEffect(() => {
                 flex: 1,
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: "100%",            
+                width: "100%", 
+                           
             }}
             >
             <Text style={{ marginLeft: SIZES.padding, color: COLORS.tealgreen, ...FONTS.h3 }}>Categories</Text>
@@ -112,9 +128,14 @@ useEffect(() => {
       }
       
       return (
-        <Screen>
+        <Screen style={{backgroundColor: COLORS.white}}>
+          <View style={{
+            flex: 1,
+            backgroundColor: COLORS.white,
+          }}>
           {renderBiography()}
           {renderCategories()}
+          </View>
         </Screen>
       )
     }

@@ -9,6 +9,7 @@ const imams = [
     id: 1,
     name: "Ja'afar Mahmud Adam",
     image: images.jaafar,
+    biography: "Ja'afar Mahmud Adam was a Nigerian Salafist Islamic scholar and member of Nigeria's Jama’at Izalat al Bid’a Wa Iqamat as Sunna, a religio-political organisation based primarily in Kano with Maiduguri as a place for his Ramadan Tafsir.",
     categories: [ {
         name: "Ramadan Tafseer",
         year: [
@@ -106,15 +107,16 @@ const imams = [
     image: images.mansuryelwa
   },
   {
-    id: 8,
-    name: "Bashir Aliyu Faruk",
-    image: images.bashiraliyu
-  },
-  {
     id: 9,
     name: "Tijjani Yusuf Guruntum",
     image: images.guruntum
+  },
+  {
+    id: 8,
+    name: "Bashir Aliyu Faruk",
+    image: images.bashiraliyu
   }
+  
 ]
 
 const numColumns = 3;
@@ -133,10 +135,10 @@ export default function Audio({navigation}) {
       
       <TouchableOpacity
           style={{
-              // width: 90,
-              // borderRadius: 40,
-              // // height: 80,
-              // margin: 20,
+              width: 90,
+              //borderRadius: 40,
+               height: 120,
+               margin: 20,
               alignItems: 'center',
               justifyContent: 'center',
             

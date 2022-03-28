@@ -18,7 +18,7 @@ const AudioNavigator = () => {
     return(
     <Stack.Navigator>
     <Stack.Screen name="Audio" component={Audio} options={{headerShown: false}}/>
-    <Stack.Screen name="Imam Screen" component={ImamScreen} options={({ route }) => ({ title: route.params.name })}/>
+    <Stack.Screen name="Imam Screen" component={ImamScreen} options={({ route }) => ({ title: route.params.imam.name })}/>
     </Stack.Navigator>
     )
 }
