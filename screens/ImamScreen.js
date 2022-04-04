@@ -18,13 +18,14 @@ useEffect(() => {
      const [ menuItems, setMenuItems ] = useState(null);
      const [selectedImam, setSelectedImam] = useState("");
      const [imamBiography, setImamBiography] = useState("");
+     const [imamImage, setImamImage] = useState("");
 
     useEffect(() => {
       const imam = route.params;
       setMenuItems(imam.imam.categories)
       setSelectedImam(imam);
       setImamBiography(imam.imam.biography)
-      
+      setImamImage(imam.imam.image)
     }, []) 
  
 
@@ -38,6 +39,7 @@ useEffect(() => {
         justifyContent: 'center'
            }}
       >
+
         <View
         style={{
         width: '95%',
@@ -48,9 +50,27 @@ useEffect(() => {
         backgroundColor: COLORS.lightGray1
            }}
       >
-
+        
+      <View
+        style={{
+          flexDirection: "row",
+          marginBottom: scale(5),
+          marginLeft: scale(5)
+        }}
+      >
+        <Image
+             source={imamImage}                      
+             style={{
+             height: scale(70),
+             width: scale(70),
+             borderRadius: scale(35),
+             // marginTop: scale(5),
+                      }}
+                  />
+      <Text style={{...FONTS.h4, color: COLORS.green, marginLeft: scale(5)}}>{selectedImam.imam?.name}</Text>            
+      </View>
       <ReadMore numberOfLines={3} seeMoreStyle={{color: COLORS.green}} seeLessStyle={{color: COLORS.green}} seeLessText="Read Less" seeMoreText="Read More"
-         style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "justify" }}>
+         style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "left" }}>
           {imamBiography}
       </ReadMore>
       </View>
