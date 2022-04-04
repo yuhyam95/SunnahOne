@@ -42,7 +42,7 @@ useEffect(() => {
 
         <View
         style={{
-        width: '95%',
+        width: '90%',
         marginVertical: scale(10),
         paddingVertical: scale(10),
         // margin: SIZES.padding /4,
@@ -61,18 +61,35 @@ useEffect(() => {
         <Image
              source={imamImage}                      
              style={{
-             height: scale(70),
-             width: scale(70),
-             borderRadius: scale(35),
+             height: scale(80),
+             width: scale(80),
+             borderRadius: scale(40),
              // marginTop: scale(5),
                       }}
                   />
-      <Text style={{...FONTS.h4, color: COLORS.green, marginLeft: scale(5)}}>{selectedImam.imam?.name}</Text>            
+      <View
+        style={{
+          flexDirection: "column",
+          marginLeft: scale(5)
+        }}
+      >
+      <Text style={{...FONTS.h4, color: COLORS.primary}}>{selectedImam.imam?.name}</Text>
+      <Text style={{...FONTS.h6, color: COLORS.primary}}>Recorded 1000 Tafsir</Text>            
       </View>
-      <ReadMore numberOfLines={3} seeMoreStyle={{color: COLORS.green}} seeLessStyle={{color: COLORS.green}} seeLessText="Read Less" seeMoreText="Read More"
-         style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "left" }}>
+      </View>
+      <View
+        style={{
+          width: '95%',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginLeft: scale(10)
+        }}
+      >
+      <ReadMore numberOfLines={3} seeMoreStyle={{color: COLORS.tealgreen}} seeLessStyle={{color: COLORS.tealgreen}} seeLessText="Read Less" seeMoreText="Read More"
+         style={{ color: COLORS.primary, ...FONTS.body5, textAlign: "left" }}>
           {imamBiography}
       </ReadMore>
+      </View>
       </View>
       </View>
       )
