@@ -138,7 +138,7 @@ export default function Audio({navigation}) {
               width: 90,
               //borderRadius: 40,
                height: 120,
-               margin: 20,
+               margin: scale(18),
               alignItems: 'center',
               justifyContent: 'center',
             

@@ -30,6 +30,8 @@ useEffect(() => {
 
     function renderBiography() {
       return (
+       
+       
         <View
         style={{
         alignItems: 'center',
@@ -38,14 +40,15 @@ useEffect(() => {
       >
         <View
         style={{
-        width: '90%',
-        paddingVertical: scale(20),
+        width: '95%',
+        marginVertical: scale(10),
+        paddingVertical: scale(10),
         // margin: SIZES.padding /4,
         borderRadius: scale(10),
-        //backgroundColor: COLORS.lightGray1
+        backgroundColor: COLORS.lightGray1
            }}
       >
-        {/* <Text style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "left" }}>{imamBiography}</Text>         */}
+
       <ReadMore numberOfLines={3} seeMoreStyle={{color: COLORS.green}} seeLessStyle={{color: COLORS.green}} seeLessText="Read Less" seeMoreText="Read More"
          style={{ color: COLORS.tealgreen, ...FONTS.body4, textAlign: "justify" }}>
           {imamBiography}
