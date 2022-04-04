@@ -1,5 +1,6 @@
 import theme, { COLORS, SIZES, FONTS } from "./theme";
 import images from "./images";
+import dummyData from "./dummy";
 
 export { 
     images,
@@ -7,4 +8,5 @@ export {
     COLORS, 
     SIZES, 
     FONTS,
+    dummyData
 };

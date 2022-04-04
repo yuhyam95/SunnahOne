@@ -42,7 +42,7 @@ useEffect(() => {
 
         <View
         style={{
-        width: '90%',
+        width: '95%',
         marginVertical: scale(10),
         paddingVertical: scale(10),
         // margin: SIZES.padding /4,
@@ -74,7 +74,7 @@ useEffect(() => {
         }}
       >
       <Text style={{...FONTS.h4, color: COLORS.primary}}>{selectedImam.imam?.name}</Text>
-      <Text style={{...FONTS.h6, color: COLORS.primary}}>Recorded 1000 Tafsir</Text>            
+      <Text style={{...FONTS.h6, color: COLORS.primary}}>1000 Tafsir Available</Text>            
       </View>
       </View>
       <View
